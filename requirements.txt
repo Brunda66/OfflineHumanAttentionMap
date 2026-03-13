@@ -1,0 +1,19 @@
+# NeuroFocus v2.0 — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Input monitoring
+pynput
+
+# System metrics (CPU, RAM)
+psutil
+
+# Active window detection (Windows)
+pygetwindow
+
+# Data processing
+pandas
+numpy
+
+# Dashboard
+streamlit>=1.32
+plotly>=5.18

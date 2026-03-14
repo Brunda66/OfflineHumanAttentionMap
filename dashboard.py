@@ -1080,10 +1080,10 @@ elif page == "🖥  Raw Data":
             st.markdown(mc("Total Events", f"{r['total_events']:,}"),              unsafe_allow_html=True)
             st.markdown(mc("Focus Score",  f"{r['overall_focus_score']:.1f}/100"), unsafe_allow_html=True)
 
-    if he:
+  if he:
         sec("Event Log — last 500 events")
         ev = data["events"].copy()
-        df_r = ev[["timestamp","event_type","application","extra"]].tail(500).iloc[::-1].copy()
+        df_r = ev[["timestamp","event_type","application"]].tail(500).iloc[::-1].copy()
         df_r["timestamp"] = df_r["timestamp"].dt.strftime("%H:%M:%S")
-        df_r.columns = ["Time","Type","Application","Extra"]
+        df_r.columns = ["Time","Type","Application"]
         st.dataframe(df_r, width="stretch", hide_index=True)
